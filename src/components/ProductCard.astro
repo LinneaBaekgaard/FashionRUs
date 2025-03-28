@@ -10,6 +10,6 @@ const { data } = Astro.props;
 
     {data.soldout && <span class="sold-out_tekst">Udsolgt</span>}
 
-    <a class="read_more" href="product.html">Gå til produkt</a>
+    <a class="read_more" href={`../product/${data.id}`}>Gå til produkt</a>
   </article>
 </section>
