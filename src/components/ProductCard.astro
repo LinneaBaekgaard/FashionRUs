@@ -6,7 +6,7 @@ const { data } = Astro.props;
   <article class={`smallProduct ${data.soldout ? "sold-out_container" : ""}`}>
     <img src=`https://kea-alt-del.dk/t7/images/webp/640/${data.id}.webp` alt="trøje" />
     <p>{data.productdisplayname}<br />DKK {data.price},-</p>
-    Nu DKK {data.price},- {data.discount && <span class="tilbud">${data.discount}%</span>}
+    Nu DKK {Math.round(data.price - (data.price * data.discount) / 100)},- {data.discount && <span class="tilbud">${data.discount}%</span>}
 
     {data.soldout && <span class="sold-out_tekst">Udsolgt</span>}
 
